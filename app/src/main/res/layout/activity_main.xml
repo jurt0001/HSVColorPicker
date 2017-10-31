@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    tools:context="com.algonquincollege.jurt0001.hsvcolorpicker.MainActivity">
+
+
+    <TextView
+        android:id="@+id/color_swatch"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:height="169dp"
+        android:background="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_above="@+id/hue">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo2" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/hue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/color_swatch"
+        android:layout_marginTop="8dp"
+        android:text="Hue"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <FrameLayout
+        android:id="@+id/hue_framework"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/hue"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp">
+
+
+        <ImageView
+            android:id="@+id/HueImageView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_hue" />
+
+        <SeekBar
+            android:id="@+id/hueSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="360" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/saturation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hue_framework"
+        android:text="Saturation"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <FrameLayout
+        android:id="@+id/saturation_framework"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/saturation"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp">
+
+
+        <ImageView
+            android:id="@+id/SaturationImageView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_saturation" />
+
+        <SeekBar
+            android:id="@+id/saturationSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="100" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/brightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saturation_framework"
+        android:text="Brightness"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <FrameLayout
+        android:id="@+id/brightness_framework"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/brightness"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp">
+
+
+        <ImageView
+            android:id="@+id/brightnessImageView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_brightness" />
+
+        <SeekBar
+            android:id="@+id/brightnessSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="100" />
+
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/brightness_framework"
+        android:layout_marginTop="32dp">
+
+        <LinearLayout
+            android:id="@+id/button_menu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <!-- TODO: <LinearLayout> has 15 nested <Button> views. -->
+
+            <Button
+                android:id="@+id/button_black"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:onClick="colorChange"
+                android:background="@color/black" />
+
+            <Button
+                android:id="@+id/button_red"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/red" />
+
+            <Button
+                android:id="@+id/button_lime"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/lime" />
+
+            <Button
+                android:id="@+id/button_blue"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/blue" />
+
+            <Button
+                android:id="@+id/button_yellow"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/yellow" />
+
+            <Button
+                android:id="@+id/button_cyan"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/cyan" />
+
+            <Button
+                android:id="@+id/button_magenta"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/magenta" />
+
+            <Button
+                android:id="@+id/button_silver"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/silver" />
+
+            <Button
+                android:id="@+id/button_grey"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/grey" />
+
+            <Button
+                android:id="@+id/button_maroon"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/maroon" />
+
+            <Button
+                android:id="@+id/button_olive"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/olive" />
+
+            <Button
+                android:id="@+id/button_green"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/green" />
+
+            <Button
+                android:id="@+id/button_purple"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/purple" />
+
+            <Button
+                android:id="@+id/button_teal"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/teal" />
+
+            <Button
+                android:id="@+id/button_navy"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:onClick="colorChange"
+                android:background="@color/navy" />
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+</RelativeLayout>
